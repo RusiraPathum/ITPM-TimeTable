@@ -1,2 +1,2 @@
 # Timetable-Manager
-SPM project
+ITPM Project
