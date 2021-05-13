@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author Tiran Harsha
  */
-public class DBconnection {
+ public class DBconnection {
     public static final Properties PROPERTIES = new Properties();
     
     private static Connection connection;

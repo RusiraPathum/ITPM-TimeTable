@@ -37,8 +37,6 @@ import com.spm.timetablemanagement.form.working_hours.ViewWorkingDayHours;
 import com.spm.timetablemanagement.form.tag_details.enterTag;
 import com.spm.timetablemanagement.home.SplashScreen;
 
-import com.spm.timetablemanagement.statistics.stats;
-
 import com.spm.timetablemanagement.util.DBconnection;
 
 import java.io.IOException;
@@ -51,6 +49,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import com.spm.timetablemanagement.menu.MenuItem;
+import com.spm.timetablemanagement.statistics.pnl_Statisticals;
 
 /**
  *
@@ -241,10 +240,12 @@ public class MainFrame extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     panelBody.removeAll();
-                    panelBody.add(new stats());
+                    panelBody.add(new pnl_Statisticals());
                     panelBody.repaint();
                     panelBody.revalidate();
                 } catch (SQLException ex) {
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
                     Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

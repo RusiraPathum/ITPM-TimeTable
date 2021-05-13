@@ -23,25 +23,26 @@ public class roomProcess extends room{
         room();
     }
     
-    public void addRoom (String building, String type) throws SQLException{
-        String sql = "INSERT INTO room(building,type) VALUES('"+building+"','"+type+"')";
+    public void addRoom (String building, String name, String type) throws SQLException{
+        String sql = "INSERT INTO room(building,name,type) VALUES('"+building+"','"+name+"','"+type+"')";
         getSt().executeUpdate(sql);
     }
     
-    public void updateRoom (String id, String type, String building) throws SQLException{
-        String sql = "UPDATE room SET type = '"+type+"', building = '"+building+"' WHERE id = '"+id+"'";
+    public void updateRoom (String id, String name, String type, String building) throws SQLException{
+        String sql = "UPDATE room SET name = '"+name+"',type = '"+type+"', building = '"+building+"' WHERE id = '"+id+"'";
         getSt().executeUpdate(sql);
     }
     public void getRoom(DefaultTableModel dtm) throws SQLException{
         String sql = "SELECT * FROM room";
         
         setRs(getSt().executeQuery(sql));
-        Object[] data = new Object[3];
+        Object[] data = new Object[4];
         
         while (getRs().next()){
             data[0] = getRs().getString("id");
             data[1] = getRs().getString("building");
-            data[2] = getRs().getString("type");
+            data[2] = getRs().getString("name");
+            data[3] = getRs().getString("type");
             dtm.addRow(data);
         }
         
