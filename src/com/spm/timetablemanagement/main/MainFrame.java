@@ -11,6 +11,7 @@ import com.spm.timetablemanagement.form.lecturer.ViewLecturer;
 
 import allocateTime_modifySessions.addConsecutiveSession;
 import allocateTime_modifySessions.addDetails_allocationTime_Home;
+import allocateTime_modifySessions.addNonOverlapping;
 import allocateTime_modifySessions.addParallelSessions;
 import com.spm.timetablemanagement.allocateroom.allocateRoom;
 import com.spm.timetablemanagement.form.timetable.TimtableMenu;
@@ -314,6 +315,15 @@ public class MainFrame extends javax.swing.JFrame {
                panelBody.revalidate();
             }
         });
+        MenuItem s4AllocateTime = new MenuItem(iconSubmenu, "Non Overlapping", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               panelBody.removeAll();
+               panelBody.add(new addNonOverlapping());
+               panelBody.repaint();
+               panelBody.revalidate();
+            }
+        });
         
         //Generate Timetable submenu items
         MenuItem s1GenerateTimeTable = new MenuItem(iconSubmenu, "Generate", new ActionListener() {
@@ -341,7 +351,7 @@ public class MainFrame extends javax.swing.JFrame {
         MenuItem menuCreateSession = new MenuItem(iconSubmenu, "Handle Session", null, s1HandleSession, 
                 s2HandleSession);
         MenuItem menuAllTime = new MenuItem(iconSubmenu, "Allocate Time and Modify Sessions", null, s1AllocateTime,
-                s2AllocateTime, s3AllocateTime);
+                s2AllocateTime, s3AllocateTime, s4AllocateTime);
 //        MenuItem menuView = new MenuItem(iconSubmenu, "View Details", null);
         MenuItem menuGenerateTimetable = new MenuItem(iconSubmenu, "Generate Timetable", null, s1GenerateTimeTable, 
                 s2GenerateTimeTable);

@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -514,7 +516,7 @@ public class addConsecutiveSession extends javax.swing.JPanel {
                 }
                 else{
                     PreparedStatement statement = connection.prepareStatement(CreateQuery.getQuery(Constant.INSERT_SP2_CONSECUTIVE_SESSION_TABLE));
-
+                    System.out.println(sessID);
                     statement.setString(1, selection_sId.getSelectedItem().toString());
                     statement.setString(2, finalTags);
                     statement.setString(3, sessID);
@@ -530,7 +532,7 @@ public class addConsecutiveSession extends javax.swing.JPanel {
             }
         }catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null, e);
+            Logger.getLogger(addNonOverlapping.class.getName()).log(Level.SEVERE, null, e);
         }
         
     }//GEN-LAST:event_btn_setActionPerformed
