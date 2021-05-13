@@ -497,10 +497,10 @@ public class MainFrame extends javax.swing.JFrame {
                 Thread.sleep(20);
                 screen.prg_bar.setValue(i);
             }
-        } catch (Exception e) {
+        } catch (Exception e){
         }
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable(){
             public void run() {
                 screen.setVisible(false);
                 new MainFrame().setVisible(true);
