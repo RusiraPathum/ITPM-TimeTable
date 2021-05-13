@@ -138,6 +138,8 @@
             create table tag(
                 id int AUTO_INCREMENT,
                 tag String,
+                tagCode String,
+                relatedTag String,
                 
                 Constraint pk1 PRIMARY KEY (id)
             )
@@ -146,7 +148,7 @@
     
     <query id="Insert_tag">
         <![CDATA[
-            INSERT INTO tag (tag) VALUES (?)
+            INSERT INTO tag (tag, tagCode, relatedTag) VALUES (?, ?, ?)
         ]]>
     </query>
     
@@ -278,7 +280,7 @@
     
     <query id="Insert_sp2_consecutive_session_table">
         <![CDATA[
-            INSERT INTO sp2_consecutive_session(sGid,cSession,sessionID) VALUES (?,?,?)
+            INSERT INTO sp2_consecutive_session(sGid,cSession) VALUES (?,?)
         ]]>
     </query> 
     
@@ -297,7 +299,7 @@
     
     <query id="Insert_sp2_parallel_session_table">
         <![CDATA[
-            INSERT INTO sp2_parallel_session(yNs,session,sessionID) VALUES (?,?,?)
+            INSERT INTO sp2_parallel_session(yNs,session) VALUES (?,?)
         ]]>
     </query> 
     
@@ -309,13 +311,13 @@
     
     <query id="Insert_WE_workingdays_and_hours_days">
         <![CDATA[
-            INSERT INTO work_day_hour_days (parentID, day)VALUES ((select id from work_day_hour where id = 2), ?)
+            INSERT INTO work_day_hour_days (id, parentID, day)VALUES (?, (select id from work_day_hour where id = 2), ?)
         ]]>
     </query>
     
     <query id="Insert_WD_workingdays_and_hours_days">
         <![CDATA[
-            INSERT INTO work_day_hour_days ( parentID, day)VALUES ((select id from work_day_hour where id = 1), ?)
+            INSERT INTO work_day_hour_days (id, parentID, day)VALUES (?, (select id from work_day_hour where id = 1), ?)
         ]]>
     </query>
     
@@ -474,17 +476,17 @@
     
     <query id="update_subject">
         <![CDATA[
-            UPDATE subject
-                set offered_year = ?,
-                offered_semester = ?,
-                subject_name = ?,
-                subject_code = ?,
-                lec_hr = ?,
-                tute_hr = ?,
-                lab_hr = ?,
-                eva_hr = ?
+            UPDATE subject as s
+                set s.offered_year = ?,
+                s.offered_semester = ?,
+                s.subject_name = ?,
+                s.subject_code = ?,
+                s.lec_hr = ?,
+                s.tute_hr = ?,
+                s.lab_hr = ?,
+                s.eva_hr = ?
             
-            where id = ?
+            where s.id = ?
        ]]>
     </query>
     

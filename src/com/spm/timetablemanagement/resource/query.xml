@@ -138,6 +138,8 @@
             create table tag(
                 id int AUTO_INCREMENT,
                 tag String,
+                tagCode String,
+                relatedTag String,
                 
                 Constraint pk1 PRIMARY KEY (id)
             )
@@ -146,7 +148,7 @@
     
     <query id="Insert_tag">
         <![CDATA[
-            INSERT INTO tag (tag) VALUES (?)
+            INSERT INTO tag (tag, tagCode, relatedTag) VALUES (?, ?, ?)
         ]]>
     </query>
     

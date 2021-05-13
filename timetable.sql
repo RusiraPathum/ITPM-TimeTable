@@ -352,7 +352,9 @@ DROP TABLE IF EXISTS `tag`;
 
 CREATE TABLE `tag` (
   `id` INTEGER PRIMARY KEY AUTOINCREMENT,
-  `tag` varchar(45) DEFAULT NULL
+  `tag` varchar(45) DEFAULT NULL,
+  `tagCode` varchar(45) DEFAULT NULL,
+  `relatedTag` varchar(45) DEFAULT NULL
 ) ;
 
 
