@@ -75,8 +75,9 @@ public class EditWorkingDayHours extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         btn_weekday = new javax.swing.JButton();
         btn_weekend = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         body = new javax.swing.JPanel();
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1310, 570));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -118,9 +119,8 @@ public class EditWorkingDayHours extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
 
-        edit_body.setBackground(new java.awt.Color(186, 148, 243));
+        edit_body.setBackground(new java.awt.Color(100, 149, 237));
         edit_body.setToolTipText("");
-        edit_body.setLayout(new java.awt.BorderLayout());
 
         btn_weekday.setBackground(new java.awt.Color(153, 153, 0));
         btn_weekday.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -142,44 +142,49 @@ public class EditWorkingDayHours extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setLabelFor(body);
-        jLabel1.setText("Click on the weekday or weekend button to show details");
-        jLabel1.setToolTipText("");
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(btn_weekday)
-                        .addGap(129, 129, 129)
-                        .addComponent(btn_weekend))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(jLabel1)))
-                .addContainerGap(210, Short.MAX_VALUE))
+                    .addComponent(btn_weekday)
+                    .addComponent(btn_weekend))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_weekday)
-                    .addComponent(btn_weekend))
-                .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(btn_weekday)
+                .addGap(40, 40, 40)
+                .addComponent(btn_weekend)
+                .addContainerGap(251, Short.MAX_VALUE))
         );
 
-        edit_body.add(jPanel6, java.awt.BorderLayout.PAGE_START);
-
-        body.setBackground(new java.awt.Color(186, 148, 243));
+        body.setBackground(new java.awt.Color(100, 149, 237));
         body.setToolTipText("");
         body.setLayout(new javax.swing.BoxLayout(body, javax.swing.BoxLayout.LINE_AXIS));
-        edit_body.add(body, java.awt.BorderLayout.CENTER);
+
+        javax.swing.GroupLayout edit_bodyLayout = new javax.swing.GroupLayout(edit_body);
+        edit_body.setLayout(edit_bodyLayout);
+        edit_bodyLayout.setHorizontalGroup(
+            edit_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edit_bodyLayout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 961, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(160, Short.MAX_VALUE))
+        );
+        edit_bodyLayout.setVerticalGroup(
+            edit_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(edit_bodyLayout.createSequentialGroup()
+                .addGroup(edit_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
 
         jPanel1.add(edit_body, java.awt.BorderLayout.CENTER);
 
@@ -224,7 +229,6 @@ public class EditWorkingDayHours extends javax.swing.JPanel {
     private javax.swing.JButton btn_weekday;
     private javax.swing.JButton btn_weekend;
     private javax.swing.JPanel edit_body;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
